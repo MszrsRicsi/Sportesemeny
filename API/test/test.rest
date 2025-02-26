@@ -1,0 +1,44 @@
+@ServerURL = http://localhost:3000
+
+### Sport
+GET {{ServerURL}}/sports
+Content-Type: application/json
+
+### Team
+GET {{ServerURL}}/teams
+Content-Type: application/json
+###
+POST {{ServerURL}}/teams
+Content-Type: application/json
+
+{
+    "name": "Jani csapata2",
+    "sportID": "6412d766-c7a0-4ed7-896a-8fbbb7abc4d6"
+}
+
+### Event - Itt a get kérések valamiért 2x adják vissza az adatokat, de működnek!!!
+### |
+### V
+GET {{ServerURL}}/events
+Content-Type: application/json
+###
+GET {{ServerURL}}/events/dae62aa5-b007-49f9-af06-0f847cad29e7/teams
+Content-Type: application/json
+###
+POST {{ServerURL}}/events
+Content-Type: application/json
+
+{
+    "sportID": "6412d766-c7a0-4ed7-896a-8fbbb7abc4d6",
+    "date": "2025-02-20",
+    "location": "Baja"
+}
+
+### EventTeams
+POST {{ServerURL}}/eventteams
+Content-Type: application/json
+
+{
+    "eventID": "dae62aa5-b007-49f9-af06-0f847cad29e7",
+    "teamID": "b3e20c47-ef6a-4898-8685-36cc85fb5c90"
+}
